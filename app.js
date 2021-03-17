@@ -17,7 +17,7 @@ app.get('/sourceURL=:sourceURL&width=:width&height=:height', function (req, res)
           height : req.params.height
     }
     QRCode.toDataURL(req.params.sourceURL,QRoptions, function (err, url) {
-        res.send(url);
+        res.send(url.split(',')[1]);
     })
 })
  
